@@ -34,7 +34,8 @@ $hashInfo =[
 	  'phone'=>'0912345678',
 	  'return_url'=>'https://fl-pay.com',
 	  'client_url'=>'https://fl-pay.com',
-	  'sto_id'   =>'My store'
+	  'sto_id'   =>'My store',
+	  'use_redeem' =>'1'
  ];
  $orderService = new OrderService($hashInfo);
  $Order =$orderService->createOrder($inpust);

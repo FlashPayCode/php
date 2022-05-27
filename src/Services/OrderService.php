@@ -18,7 +18,6 @@ class OrderService extends AesObj{
        $array['ver'] =UtilService::$version;
        $array['tx_type'] =101;
        $array['cur'] ="NTD";
-       $array['use_redeem'] ="0";
        $array['ord_time'] =$array['ord_time']->format('Y-m-d H:i:s');
        return $array;
     }
