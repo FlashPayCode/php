@@ -8,7 +8,7 @@ use FlashPay\Lib\Services\QueryOrderService;
 use FlashPay\Lib\Services\DoTradeService;
 use FlashPay\Lib\TradeConfig\PaymentMethods;
 use FlashPay\Lib\TradeConfig\PaymentMethodsItem;
-
+use FlashPay\Lib\Services\FeedbackService;
 
 /*
 *hashKey
@@ -74,3 +74,12 @@ echo $queryOrderService->queryMultiOrder('HT00000003',$beginDate ,$endDate,UtilS
 */
 $doTradeService =new DoTradeService($hashInfo);
 echo $doTradeService->cancelAuth('HT00000003','10494',100,UtilService::$stageURL);
+
+
+/*
+*回傳交易資料通知解密
+* param hashKey
+* param hashIv
+* param  交易資料回傳密文
+*/
+$feeback=new FeedbackService($input['hashKey'],$input['hashIv'],$returnDate);
